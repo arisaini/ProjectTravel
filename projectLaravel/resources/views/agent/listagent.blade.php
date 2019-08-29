@@ -10,7 +10,7 @@
 @endif
     <div class="row">
         <div class="col-6">
-            <h1>Daftar Agent : {{ Auth::user()->name }}</h2>
+            <h1>Daftar Agent </h2>
         </div>
         <table class="table table-striped">
             <thead>

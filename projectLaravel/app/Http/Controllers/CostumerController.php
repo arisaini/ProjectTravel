@@ -74,20 +74,22 @@ class CostumerController extends Controller
         $request->request->add(['kodereferal_agent' => $agent->kodereferal]);
         $costumer = \App\Costumer::create($request->all());
         
+        //persen potongan
         $diskon  = ['100'];
         $diskon1 = ['50', '50'];
         $diskon2 = ['50', '30', '20'];
         $diskon3 = ['50', '25', '15', '10'];
         $diskon4 = ['50', '18', '14', '11', '7'];
         $diskon5 = ['50', '15', '13', '10', '7', '5'];
-
+        //potongan
         $potongan = 500000;
-
+        
+        //proses input data pendapatan
         if ( count($data) == 0 ){
 
             $request->request->add(['user_id' => '1']);
             $request->request->add(['hasil' => ($diskon[0]/100)*$potongan]);
-            $request->request->add(['ket' => 'Ok']);
+            $request->request->add(['ket' => 'Lunas']);
             $request->request->add(['diskon' => $diskon[0]]);
             $pendapatan = \App\Pendapatan::create($request->all());
 
@@ -95,90 +97,90 @@ class CostumerController extends Controller
 
             $request->request->add(['user_id' => $data[0]->user_id]);
             $request->request->add(['hasil' => ($diskon1[0]/100)*$potongan]);
-            $request->request->add(['ket' => 'Ok']);
+            $request->request->add(['ket' => 'Lunas']);
             $request->request->add(['diskon' => $diskon1[0]]);
             $pendapatan = \App\Pendapatan::create($request->all());
 
             $request->request->add(['user_id' => '1' ]);
             $request->request->add(['hasil' => ($diskon1[1]/100)*$potongan]);
-            $request->request->add(['ket' => 'Ok']);
+            $request->request->add(['ket' => 'Lunas']);
             $request->request->add(['diskon' => $diskon1[1]]);
             $pendapatan = \App\Pendapatan::create($request->all());
 
         } elseif ( count($data) == 2 ){
-            
+            //1
             $request->request->add(['user_id' => $data[1]->user_id]);
             $request->request->add(['hasil' => ($diskon2[0]/100)*$potongan]);
-            $request->request->add(['ket' => 'Ok']);
+            $request->request->add(['ket' => 'Lunas']);
             $request->request->add(['diskon' => $diskon2[0]]);
             $pendapatan = \App\Pendapatan::create($request->all());
-
+            //2
             $request->request->add(['user_id' => $data[0]->user_id]);
             $request->request->add(['hasil' => ($diskon2[1]/100)*$potongan]);
-            $request->request->add(['ket' => 'Ok']);
+            $request->request->add(['ket' => 'Lunas']);
             $request->request->add(['diskon' => $diskon2[1]]);
             $pendapatan = \App\Pendapatan::create($request->all());
-
+            //3
             $request->request->add(['user_id' => '1' ]);
             $request->request->add(['hasil' => ($diskon2[2]/100)*$potongan]);
-            $request->request->add(['ket' => 'Ok']);
+            $request->request->add(['ket' => 'Lunas']);
             $request->request->add(['diskon' => $diskon2[2]]);
             $pendapatan = \App\Pendapatan::create($request->all());
 
         } elseif ( count($data) == 3 ){
-            
+            //1
             $request->request->add(['user_id' => $data[2]->user_id]);
             $request->request->add(['hasil' => ($diskon3[0]/100)*$potongan]);
-            $request->request->add(['ket' => 'Ok']);
+            $request->request->add(['ket' => 'Lunas']);
             $request->request->add(['diskon' => $diskon3[0]]);
             $pendapatan = \App\Pendapatan::create($request->all());
-
+            //2
             $request->request->add(['user_id' => $data[1]->user_id]);
             $request->request->add(['hasil' => ($diskon3[1]/100)*$potongan]);
             $request->request->add(['ket' => 'Ok']);
             $request->request->add(['diskon' => $diskon3[1]]);
             $pendapatan = \App\Pendapatan::create($request->all());
-
+            //3
             $request->request->add(['user_id' => $data[0]->user_id]);
             $request->request->add(['hasil' => ($diskon3[2]/100)*$potongan]);
             $request->request->add(['ket' => 'Ok']);
             $request->request->add(['diskon' => $diskon3[2]]);
             $pendapatan = \App\Pendapatan::create($request->all());
-
+            //4
             $request->request->add(['user_id' => '1' ]);
-            $request->request->add(['hasil' => ($diskon3[3]/100)*$potongan]);
-            $request->request->add(['ket' => 'Ok']);
-            $request->request->add(['diskon' => $diskon4[3]]);
-            $pendapatan = \App\Pendapatan::create($request->all());
-
-        } elseif ( count($data) == 4 ){
-
-            $request->request->add(['user_id' => $data[3]->user_id]);
-            $request->request->add(['hasil' => ($diskon3[0]/100)*$potongan]);
-            $request->request->add(['ket' => 'Ok']);
-            $request->request->add(['diskon' => $diskon3[0]]);
-            $pendapatan = \App\Pendapatan::create($request->all());
-
-            $request->request->add(['user_id' => $data[2]->user_id]);
-            $request->request->add(['hasil' => ($diskon3[1]/100)*$potongan]);
-            $request->request->add(['ket' => 'Ok']);
-            $request->request->add(['diskon' => $diskon3[1]]);
-            $pendapatan = \App\Pendapatan::create($request->all());
-
-            $request->request->add(['user_id' => $data[1]->user_id]);
-            $request->request->add(['hasil' => ($diskon3[2]/100)*$potongan]);
-            $request->request->add(['ket' => 'Ok']);
-            $request->request->add(['diskon' => $diskon3[2]]);
-            $pendapatan = \App\Pendapatan::create($request->all());
-
-            $request->request->add(['user_id' => $data[0]->user_id]);
             $request->request->add(['hasil' => ($diskon3[3]/100)*$potongan]);
             $request->request->add(['ket' => 'Ok']);
             $request->request->add(['diskon' => $diskon3[3]]);
             $pendapatan = \App\Pendapatan::create($request->all());
 
+        } elseif ( count($data) == 4 ){
+            //1
+            $request->request->add(['user_id' => $data[3]->user_id]);
+            $request->request->add(['hasil' => ($diskon4[0]/100)*$potongan]);
+            $request->request->add(['ket' => 'Ok']);
+            $request->request->add(['diskon' => $diskon4[0]]);
+            $pendapatan = \App\Pendapatan::create($request->all());
+            //2
+            $request->request->add(['user_id' => $data[2]->user_id]);
+            $request->request->add(['hasil' => ($diskon4[1]/100)*$potongan]);
+            $request->request->add(['ket' => 'Ok']);
+            $request->request->add(['diskon' => $diskon4[1]]);
+            $pendapatan = \App\Pendapatan::create($request->all());
+            //3
+            $request->request->add(['user_id' => $data[1]->user_id]);
+            $request->request->add(['hasil' => ($diskon4[2]/100)*$potongan]);
+            $request->request->add(['ket' => 'Ok']);
+            $request->request->add(['diskon' => $diskon4[2]]);
+            $pendapatan = \App\Pendapatan::create($request->all());
+            //4
+            $request->request->add(['user_id' => $data[0]->user_id]);
+            $request->request->add(['hasil' => ($diskon4[3]/100)*$potongan]);
+            $request->request->add(['ket' => 'Ok']);
+            $request->request->add(['diskon' => $diskon4[3]]);
+            $pendapatan = \App\Pendapatan::create($request->all());
+            //5
             $request->request->add(['user_id' => '1' ]);
-            $request->request->add(['hasil' => ($diskon3[4]/100)*$potongan]);
+            $request->request->add(['hasil' => ($diskon4[4]/100)*$potongan]);
             $request->request->add(['ket' => 'Ok']);
             $request->request->add(['diskon' => $diskon4[4]]);
             $pendapatan = \App\Pendapatan::create($request->all());

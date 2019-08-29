@@ -10,7 +10,7 @@
 @endif
     <div class="row">
         <div class="col-6">
-            <h1>Daftar Agent</h2>
+            <h1>Daftar Agent: {{ Auth::user()->name }}</h2>
         </div>
         <div class="col-6">
             <!-- Button trigger modal -->
