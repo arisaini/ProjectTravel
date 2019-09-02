@@ -6,7 +6,7 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
+    
     <title>TIFATRAVEL</title>
 
     <!-- Scripts -->
@@ -25,6 +25,7 @@
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <!--{{ config('app.name', 'Laravel') }}-->
+                    <img src="ProjectTravel/image/plane.png" alt="plane" style="width:50px;height:40px">
                    <b> TIFATRAVEL </b>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -34,43 +35,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        @if(auth()->user()->role == 'admin')
-                        <li class="nav-item active">
-                            <a class="nav-link" href="dashboard">Dashboard<span class="sr-only">(current)</span></a>
-                        </li>
                     
-                        <li class="nav-item active">
-                            <a class="nav-link" href="agent">Agent<span class="sr-only">(current)</span></a>
-                        </li>
-                        @endif
-                        @if(auth()->user()->role == 'agent')
-                        <li class="nav-item active">
-                            <a class="nav-link" href="agentbawah">Agent<span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="costumer">Costumer<span class="sr-only">(current)</span></a>
-                        </li>
-                        @endif
-                        @if(auth()->user()->role == 'admin')
-                        <li class="nav-item active">
-                            <a class="nav-link" href="costumerlist">Costumer<span class="sr-only">(current)</span></a>
-                        </li>
-                        @endif
-                        <li class="nav-item active">
-                            <a class="nav-link" href="pendapatan">Pendapatan<span class="sr-only">(current)</span></a>
-                        </li>
-                        
-                        <!--<li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Dropdown
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                            </div>
-                        </li>-->
                     
                     </ul>
 
@@ -97,17 +62,6 @@
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        Setting
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

@@ -80,6 +80,7 @@
             @endif
 
             <div class="content">
+            <img src="ProjectTravel/image/plane.png" alt="plane" style="width:80px;height:60px">
                 <div class="title m-b-md">
                     Welcome
                 </div>

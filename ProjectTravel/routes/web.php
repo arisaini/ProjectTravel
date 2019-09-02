@@ -31,9 +31,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/proses', 'CostumerController@createv2');
 
-Route::get('/dashboard', 'dashboardController@index')->middleware('auth');
+Route::get('/dashboard', 'DashboardController@index')->middleware('auth');
 
-Route::get('/pendapatan', 'pendapatanController@index')->middleware('auth');
+Route::get('/pendapatan', 'PendapatanController@index')->middleware('auth');
 
 Route::group(['middleware' => ['auth','checkRole:admin']], function(){
 
