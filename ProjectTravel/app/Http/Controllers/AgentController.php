@@ -16,7 +16,7 @@ class AgentController extends Controller
         $data = \App\Agent::where('user_id', $id)->first();
         //$kodereferal = 
         $agent = \App\Agent::where('kodereferal_agent', '=', '1111111111')->get();
-        return view('agent.dashboard', compact('agent'));
+        return view('agent.dashboard', compact('agent','data'));
     }
 
     public function create(Request $request){
@@ -60,7 +60,7 @@ class AgentController extends Controller
 
     public function viewUpdate($id){
         $agent = \App\Agent::find($id);
-        return view('agent/update', ['agent' => $agent]);
+        return view('/agent/update', ['agent' => $agent]);
     }
 
     public function update(Request $request, $id){
@@ -81,6 +81,6 @@ class AgentController extends Controller
         $agent = \App\Agent::where('kodereferal_agent', '=' , $data2->kodereferal)->get();
         
         //return dd($array);
-        return view('agent.listagent', compact('agent'));
+        return view('/agent.listagent', compact('agent'));
     }
 }

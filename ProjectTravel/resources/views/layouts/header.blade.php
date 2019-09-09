@@ -52,14 +52,18 @@
                             <a class="nav-link" href="costumer">Costumer<span class="sr-only">(current)</span></a>
                         </li>
                         @endif
+                        <li class="nav-item active">
+                            <a class="nav-link" href="pendapatan">Bonus<span class="sr-only">(current)</span></a>
+                        </li>
                         @if(auth()->user()->role == 'admin')
                         <li class="nav-item active">
                             <a class="nav-link" href="costumerlist">Costumer<span class="sr-only">(current)</span></a>
                         </li>
-                        @endif
                         <li class="nav-item active">
-                            <a class="nav-link" href="pendapatan">Pendapatan<span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="#">Setting<span class="sr-only">(current)</span></a>
                         </li>
+                        @endif
+                        
                         
                         <!--<li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -83,9 +87,9 @@
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
                             @if (Route::has('register'))
-                                <li class="nav-item">
+                                <!-- <li class="nav-item">
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
+                                </li> -->
                             @endif
                         @else
                             <li class="nav-item dropdown">

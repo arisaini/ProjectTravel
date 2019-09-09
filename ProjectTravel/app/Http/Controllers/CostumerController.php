@@ -84,6 +84,18 @@ class CostumerController extends Controller
         //potongan
         $potongan = 500000;
         
+        //for
+        // for ($i=0; $i <= $count($data); $i++){
+
+        //     $request->request->add(['user_id' => $data[0]->user_id]);
+        //     $request->request->add(['hasil' => ($diskon1[0]/100)*$potongan]);
+        //     $request->request->add(['ket' => 'Lunas']);
+        //     $request->request->add(['diskon' => $diskon1[0]]);
+        //     $pendapatan = \App\Pendapatan::create($request->all());
+            
+        // }
+
+
         //proses input data pendapatan
         if ( count($data) == 0 ){
 

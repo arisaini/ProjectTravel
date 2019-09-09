@@ -43,7 +43,7 @@ Route::group(['middleware' => ['auth','checkRole:admin']], function(){
 
     Route::post('/agent/create', 'AgentController@create');
 
-    Route::get('/agent/{id}/viewUpdate','AgentController@viewUpdate');
+    Route::get('agent/{id}/viewUpdate','AgentController@viewUpdate');
 
     Route::post('/agent/{id}/update','AgentController@update');
 

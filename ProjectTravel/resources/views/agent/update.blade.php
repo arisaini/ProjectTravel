@@ -11,6 +11,7 @@
                 <div class="modal-body">
                     <form action="update" method="POST">
                     {{csrf_field()}}
+                    <!-- {{ method_field('PUT') }} -->
                         <div class="form-group">
                             <label for="exampleFormControlInput1">Nama</label>
                             <input type="text" name="nama" value="{{$agent->nama}}" class="form-control" id="nama" placeholder="nama" required>
@@ -28,7 +29,7 @@
                         </div>
                         
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <a href="/ProjectTravel/agent" class="btn btn-secondary" >Close</a>
                             <button type="submit" class="btn btn-warning">Update</button>
                         </form>
                         </div>
@@ -39,5 +40,4 @@
         </div>
     </div>
 </div>
-
-        @endsection
+@endsection
